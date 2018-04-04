@@ -1,0 +1,49 @@
+{
+  "name": "hohhot",
+  "version": "0.0.1",
+  "description": "Write once, compile anywhere",
+  "main": "dist/lib/main.js",
+  "types": "dist/lib/main.d.ts",
+  "author": "Mgen (https://www.mgenware.com)",
+  "homepage": "https://github.com/mgenware/hohhot",
+  "bugs": "https://github.com/mgenware/hohhot/issues",
+  "keywords": [
+    "language",
+    "transpiler"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgenware/hohhot.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn run clean && yarn run compile && yarn run lint && yarn run dev_test",
+    "dev_test": "yarn run copy && jest",
+    "dt": "yarn run dev_test",
+    "build": "yarn test",
+    "compile": "tsc",
+    "dev": "yarn run clean && tsc -w",
+    "prepublishOnly": "yarn run test",
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "copy": "copyfiles \"tests/data/**/*.*\" \"dist\"",
+    "clean:dist": "rimraf dist",
+    "clean": "npm run clean:dist"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.2",
+    "@types/node": "^9.6.2",
+    "copyfiles": "^2.0.0",
+    "jest": "^22.4.3",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1"
+  },
+  "files":[
+    "dist/lib",
+    ".gitignore",
+    "README.md"
+  ]
+}
