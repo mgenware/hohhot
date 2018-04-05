@@ -3,8 +3,8 @@ import * as fs from 'fs';
 
 describe('require this module', () => {
   test('Verify module members', () => {
-    // TODO: replace "main.add" to one of your module members
     expect(typeof main.Node).toBe('function');
+    expect(typeof main.NodeType).toBe('object');
   });
 
   test('Verify type definition files', () => {
