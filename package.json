@@ -39,9 +39,10 @@
     "jest": "^22.4.3",
     "rimraf": "^2.6.2",
     "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.8.1"
   },
-  "files":[
+  "files": [
     "dist/lib",
     ".gitignore",
     "README.md"
